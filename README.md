@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e4541459-58ad-4f80-a0a0-b83d738e87f2/deploy-status)](https://app.netlify.com/sites/fx-filter/deploys)
+
 # fx-filter-previewer
 
 ## _setup
