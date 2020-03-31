@@ -1,0 +1,1 @@
+!async function(){await krunch.compile();krunch.mount("app")}();

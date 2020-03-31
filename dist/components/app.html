@@ -1,0 +1,23 @@
+<app><y class="absolute top-0 left-0 w-full bg-charcoal-100"><y class="flex flex-col justify-center items-center"><global-header></global-header><y class="absolute top-2 right-2"><social-github></social-github></y><y class="flex flex-wrap xs:justify-start justify-center items-center"><y each="{ data in effects }"><card-filter-display name="{ data.name }" filter="{ data.filter }"></card-filter-display></y></y><global-footer></global-footer></y></y><script>export default {
+      onMounted() {
+
+        const self = this
+        const base = 'assets/data/'
+        const url = base + 'effects.json'
+
+        fetch(url)
+          .then(res => {
+            res.json()
+              .then(data => {
+                delete self.error
+                self.effects = data
+                self.update()
+              })
+              .catch(error => {
+                self.error = error
+                self.update()
+              })
+          })
+
+      }
+    }</script></app>
