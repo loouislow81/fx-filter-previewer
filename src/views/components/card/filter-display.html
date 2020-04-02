@@ -1,13 +1,13 @@
 <card-filter-display>
 
-  <y class="relative group transition duration-300 ease-in-out transform xs:hover:scale-100 sm:hover:scale-110 md:hover:scale-110 lg:hover:scale-110 group sm:max-w-lg max-w-md xs:m-2 sm:m-4 bg-charcoal-500 border-4 border-charcoal-600 hover:border-gray-100 rounded-lg cursor-pointer">
+  <y class="relative group sm:max-w-lg lg:max-w-xs xs:m-2 sm:m-4 bg-charcoal-500 border-4 border-charcoal-600 hover:border-gray-100 rounded-lg cursor-pointer transition duration-300 ease-in-out transform xs:hover:scale-100 sm:hover:scale-110 md:hover:scale-110 lg:hover:scale-110">
 
-    <img class="fx:filter:{ props.filter } adaptive xs:w-full sm:w-full md:w-56 lg:w-56 xs:h-32 sm:h-56 md:h-56 lg:h-56 rounded object-cover object-center overflow-hidden shadow-lg"
-         src="assets/image/low/sample/silhouette-of-tree-with-spiral-lights-1101025.jpg"
-         data-src="assets/image/high/sample/silhouette-of-tree-with-spiral-lights-1101025.jpg"
+    <img class="fx:filter:{ props.filter } adaptive xs:w-full sm:w-full md:w-56 lg:w-full xs:h-32 sm:h-56 md:h-56 lg:h-64 rounded object-cover object-center overflow-hidden shadow-lg"
+         src="assets/image/low/sample/{ props.image }"
+         data-src="assets/image/high/sample/{ props.image }"
          alt="{ props.name }">
 
-    <y class="absolute bottom-1 left-1 xs:px-2 xs:py-1 lg:px-5 py-1 group-hover:text-gray-300 font-default xs:text-xs sm:text-sm md:text-sm lg:text-sm text-gray-500 text-center bg-charcoal-600 xs:rounded lg:rounded-full shadow">
+    <y class="absolute bottom-2 left-2 xs:px-2 xs:py-1 lg:px-5 py-1 font-default xs:text-xs sm:text-sm md:text-sm lg:text-sm text-center text-gray-100 group-hover:text-charcoal-100 bg-charcoal-600 group-hover:bg-gray-100 xs:rounded lg:rounded-full shadow">
       { props.name }
     </y>
 

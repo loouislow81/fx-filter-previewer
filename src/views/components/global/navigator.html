@@ -1,0 +1,75 @@
+<global-navigator>
+
+  <y class="pb-4 font-serif flex items-center">
+
+    <a onclick="{ onClickA }"
+       class="inline-block m-2 px-5 py-1 text-lg shadow rounded-full transition duration-300 ease { state.a } hover:text-charcoal-100 hover:bg-gray-200"
+       href="/">
+        One
+    </a>
+
+    <a onclick="{ onClickB }"
+       class="inline-block m-2 px-5 py-1 text-lg shadow rounded-full transition duration-300 ease { state.b } hover:text-charcoal-100 hover:bg-gray-200"
+       href="/#/02">
+      Two
+    </a>
+
+    <a onclick="{ onClickC }"
+       class="inline-block m-2 px-5 py-1 text-lg shadow rounded-full transition duration-300 ease { state.c } hover:text-charcoal-100 hover:bg-gray-200"
+       href="/#/03">
+      Three
+    </a>
+
+    <a onclick="{ onClickD }"
+       class="xs:hidden lg:block inline-block m-2 px-5 py-1 text-lg shadow rounded-full transition duration-300 ease { state.d } hover:text-charcoal-100 hover:bg-gray-200"
+       href="/#/04">
+      Four
+    </a>
+
+  </y>
+
+
+  <script>
+    export default {
+      state: {
+        a: 'text-charcoal-100 bg-gray-300',
+        b: 'text-gray-300 bg-transparent',
+        c: 'text-gray-300 bg-transparent',
+        d: 'text-gray-300 bg-transparent'
+      },
+      onClickA(e) {
+        this.update({
+          a: 'text-charcoal-100 bg-gray-300',
+          b: 'text-gray-300 bg-transparent',
+          c: 'text-gray-300 bg-transparent',
+          c: 'text-gray-300 bg-transparent'
+        })
+      },
+      onClickB(e) {
+        this.update({
+          a: 'text-gray-300 bg-transparent',
+          b: 'text-charcoal-100 bg-gray-300',
+          c: 'text-gray-300 bg-transparent',
+          d: 'text-gray-300 bg-transparent'
+        })
+      },
+      onClickC(e) {
+        this.update({
+          a: 'text-gray-300 bg-transparent',
+          b: 'text-gray-300 bg-transparent',
+          c: 'text-charcoal-100 bg-gray-300',
+          d: 'text-gray-300 bg-transparent'
+        })
+      },
+      onClickD(e) {
+        this.update({
+          a: 'text-gray-300 bg-transparent',
+          b: 'text-gray-300 bg-transparent',
+          c: 'text-gray-300 bg-transparent',
+          d: 'text-charcoal-100 bg-gray-300'
+        })
+      }
+    }
+  </script>
+
+</global-navigator>

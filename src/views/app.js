@@ -7,8 +7,8 @@
 
   // Routing
   // Isomorphic urls routing api.
-  // krunch.register('router', route.Router)
-  // krunch.register('route', route.Route)
+  krunch.register('router', route.Router)
+  krunch.register('route', route.Route)
 
   // Mounting
   // If you mount the main view component, krunch will

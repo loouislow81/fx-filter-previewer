@@ -1,1 +1,1 @@
-!async function(){await krunch.compile();krunch.mount("app")}();
+!async function(){await krunch.compile(),krunch.register("router",route.Router),krunch.register("route",route.Route);krunch.mount("app")}();
