@@ -68,7 +68,26 @@
           c: 'text-gray-300 bg-transparent',
           d: 'text-charcoal-100 bg-gray-300'
         })
+      },
+      onMounted() {
+
+        //const base = 'http://localhost:3002'
+        const base = 'https://fx-filter-previewer.netlify.app'
+        const URL1 = base + '/#/02'
+        const URL2 = base + '/#/03'
+        const URL3 = base + '/#/04'
+        const redirectToHome = base
+
+        if (
+          window.location.href === URL1 || 
+          window.location.href === URL2 || 
+          window.location.href === URL3
+          ) {
+          window.location.href = redirectToHome
+        }
+
       }
+      
     }
   </script>
 
