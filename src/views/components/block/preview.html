@@ -1,0 +1,43 @@
+<block-preview>
+
+  <y class="mx-auto flex flex-wrap xs:justify-around lg:justify-center items-center">
+    <y each="{ data in effects }">
+
+      <card-filter-display
+        image="1"
+        name="{ data.name }"
+        filter="{ data.filter }">
+      </card-filter-display>
+
+    </y>
+  </y>
+
+
+  <script>
+    export default {
+      onMounted() {
+
+        const self = this
+        const base = 'assets/data/'
+        const url = base + 'effects.json'
+
+        fetch(url)
+          .then(res => {
+            res.json()
+              .then(data => {
+                delete self.error
+                self.effects = data
+                self.update()
+              })
+              .catch(error => {
+                self.error = error
+                self.update()
+              })
+          })
+
+      }
+    }
+
+  </script>
+
+</block-preview>
