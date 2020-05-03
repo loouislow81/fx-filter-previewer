@@ -2,29 +2,33 @@
 
   <y class="pb-4 font-serif flex items-center select-none">
 
-    <a onclick="{ onClickA }"
-       class="inline-block m-2 px-5 py-1 text-lg shadow rounded-full transition duration-300 ease { state.a } hover:text-charcoal-100 hover:bg-gray-200"
-       href="/">
-        One
-    </a>
+    <misc-modes
+      url="/"
+      title="One"
+      trigger="{ onClickA }"
+      mode="{ state.a }"
+    ></misc-modes>
 
-    <a onclick="{ onClickB }"
-       class="inline-block m-2 px-5 py-1 text-lg shadow rounded-full transition duration-300 ease { state.b } hover:text-charcoal-100 hover:bg-gray-200"
-       href="/#/02">
-      Two
-    </a>
+    <misc-modes
+      url="/#/02"
+      title="Two"
+      trigger="{ onClickB }"
+      mode="{ state.b }"
+    ></misc-modes>
 
-    <a onclick="{ onClickC }"
-       class="inline-block m-2 px-5 py-1 text-lg shadow rounded-full transition duration-300 ease { state.c } hover:text-charcoal-100 hover:bg-gray-200"
-       href="/#/03">
-      Three
-    </a>
+    <misc-modes
+      url="/#/03"
+      title="Three"
+      trigger="{ onClickC }"
+      mode="{ state.c }"
+    ></misc-modes>
 
-    <a onclick="{ onClickD }"
-       class="xs:hidden lg:block inline-block m-2 px-5 py-1 text-lg shadow rounded-full transition duration-300 ease { state.d } hover:text-charcoal-100 hover:bg-gray-200"
-       href="/#/04">
-      Four
-    </a>
+    <misc-modes
+      url="/#/04"
+      title="Four"
+      trigger="{ onClickD }"
+      mode="{ state.d }"
+    ></misc-modes>
 
   </y>
 
