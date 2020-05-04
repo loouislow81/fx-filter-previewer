@@ -430,4 +430,4 @@ krunch.torrent = function(id, uri) {
 //   const predict = nn.predict(inputArray);
 // };
 
-!async function(){await krunch.compile(),krunch.register("router",route.Router),krunch.register("route",route.Route);krunch.mount("app")}();
+!async function(){await krunch.compile(),krunch.register("router",route.Router),krunch.register("route",route.Route);krunch.mount("app")}(),paypal.Buttons({style:{shape:"pill",color:"silver",layout:"horizontal",label:"paypal"},createOrder:function(e,r){return r.order.create({purchase_units:[{amount:{value:"5"}}]})},onApprove:function(e,r){return r.order.capture().then((function(e){alert("Transaction completed by "+e.payer.name.given_name+"!")}))}}).render("#paypal-button-container");

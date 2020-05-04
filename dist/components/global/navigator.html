@@ -1,15 +1,13 @@
-<global-navigator><y class="pb-4 font-serif flex items-center select-none"><misc-modes url="/" title="One" trigger="{ onClickA }" mode="{ state.a }"></misc-modes><misc-modes url="/#/02" title="Two" trigger="{ onClickB }" mode="{ state.b }"></misc-modes><misc-modes url="/#/03" title="Three" trigger="{ onClickC }" mode="{ state.c }"></misc-modes><misc-modes url="/#/04" title="Four" trigger="{ onClickD }" mode="{ state.d }"></misc-modes></y><script>export default {
+<global-navigator><y class="pb-4 font-serif flex items-center select-none"><misc-modes url="/" title="One" trigger="{ onClickA }" mode="{ state.a }"></misc-modes><misc-modes url="/#/02" title="Two" trigger="{ onClickB }" mode="{ state.b }"></misc-modes><misc-modes url="/#/03" title="Three" trigger="{ onClickC }" mode="{ state.c }"></misc-modes></y><script>export default {
       state: {
         a: 'text-charcoal-100 bg-gray-300',
         b: 'text-gray-300 bg-transparent',
-        c: 'text-gray-300 bg-transparent',
-        d: 'text-gray-300 bg-transparent'
+        c: 'text-gray-300 bg-transparent'
       },
       onClickA(e) {
         this.update({
           a: 'text-charcoal-100 bg-gray-300',
           b: 'text-gray-300 bg-transparent',
-          c: 'text-gray-300 bg-transparent',
           c: 'text-gray-300 bg-transparent'
         })
       },
@@ -17,24 +15,14 @@
         this.update({
           a: 'text-gray-300 bg-transparent',
           b: 'text-charcoal-100 bg-gray-300',
-          c: 'text-gray-300 bg-transparent',
-          d: 'text-gray-300 bg-transparent'
+          c: 'text-gray-300 bg-transparent'
         })
       },
       onClickC(e) {
         this.update({
           a: 'text-gray-300 bg-transparent',
           b: 'text-gray-300 bg-transparent',
-          c: 'text-charcoal-100 bg-gray-300',
-          d: 'text-gray-300 bg-transparent'
-        })
-      },
-      onClickD(e) {
-        this.update({
-          a: 'text-gray-300 bg-transparent',
-          b: 'text-gray-300 bg-transparent',
-          c: 'text-gray-300 bg-transparent',
-          d: 'text-charcoal-100 bg-gray-300'
+          c: 'text-charcoal-100 bg-gray-300'
         })
       },
       onMounted() {
@@ -43,28 +31,18 @@
         const base = 'https://fx-filter-previewer.netlify.app'
         const URL2 = base + '/#/02'
         const URL3 = base + '/#/03'
-        const URL4 = base + '/#/04'
 
         if (window.location.href === URL2) {
           this.update({
             a: 'text-gray-300 bg-transparent',
             b: 'text-charcoal-100 bg-gray-300',
-            c: 'text-gray-300 bg-transparent',
-            d: 'text-gray-300 bg-transparent'
+            c: 'text-gray-300 bg-transparent'
           })
         } else if (window.location.href === URL3) {
           this.update({
             a: 'text-gray-300 bg-transparent',
             b: 'text-gray-300 bg-transparent',
-            c: 'text-charcoal-100 bg-gray-300',
-            d: 'text-gray-300 bg-transparent'
-          })
-        } else if (window.location.href === URL4) {
-          this.update({
-            a: 'text-gray-300 bg-transparent',
-            b: 'text-gray-300 bg-transparent',
-            c: 'text-gray-300 bg-transparent',
-            d: 'text-charcoal-100 bg-gray-300'
+            c: 'text-charcoal-100 bg-gray-300'
           })
         }
 
