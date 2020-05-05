@@ -408,6 +408,55 @@ krunch.torrent = function(id, uri) {
 
 
 /*
+  Request user to install PWA app
+  @param {null}
+  @usage,
+          <y class="hidden"
+             id="requestAppInstall">
+            <y id="requestAppTrigger">
+              ...
+            </y>
+          </y>
+*/
+krunch.requestAppInstall = function() {
+  const appInstallContainer = document.getElementById("requestAppInstall");
+  const appTrigger = document.getElementById("requestAppTrigger");
+
+  self.addEventListener("beforeinstallprompt", function(event) {
+    log("(PWA)", event);
+    // stash the event so it can be triggered later
+    window.deferredPrompt = event;
+    // remove the 'hidden' class from the element
+    appInstallContainer.classList.toggle("hidden", false);
+  });
+
+  appTrigger.addEventListener("click", function() {
+    log("(PWA) app installed", "");
+    const promptEvent = window.deferredPrompt;
+    if (!promptEvent) {
+      // the deferred prompt isn't available
+      return;
+    }
+    // show the install prompt
+    promptEvent.prompt();
+    // log the result
+    promptEvent.userChoice.then(function(result) {
+      log("(PWA)", result);
+      // reset the deferred prompt variable, since
+      // prompt() can only be called once
+      window.deferredPrompt = null;
+      // hide the install button
+      appInstallContainer.classList.toggle("hidden", true);
+    });
+  });
+
+  self.addEventListener("appinstalled", function(event) {
+    log("(PWA) app installed", event);
+  });
+};
+
+
+/*
   (!! experiemental !!)
   Train with Sigmoid Neural Network
   @param {inputArray}
@@ -430,43 +479,4 @@ krunch.torrent = function(id, uri) {
 //   const predict = nn.predict(inputArray);
 // };
 
-
-krunch.requestAppInstall = function () {
-
-  const appInstallContainer = document.getElementById('requestAppInstall');
-  const appTrigger = document.getElementById('requestAppTrigger');
-
-  self.addEventListener('beforeinstallprompt', function(event) {
-    log("(PWA)", event);
-    // stash the event so it can be triggered later
-    window.deferredPrompt = event;
-    // remove the 'hidden' class from the element
-    appInstallContainer.classList.toggle('hidden', false);
-  });
-
-  appTrigger.addEventListener('click', function() {
-    log("(PWA) app installed", "");
-    const promptEvent = window.deferredPrompt;
-    if (!promptEvent) {
-      // the deferred prompt isn't available
-      return;
-    }
-    // show the install prompt
-    promptEvent.prompt();
-    // log the result
-    promptEvent.userChoice.then(function(result) {
-      log("(PWA)", result);
-      // reset the deferred prompt variable, since
-      // prompt() can only be called once
-      window.deferredPrompt = null;
-      // hide the install button
-      appInstallContainer.classList.toggle('hidden', true);
-    });
-  });
-
-  self.addEventListener('appinstalled', function(event) {
-    log("(PWA) app installed", event);
-  });
-
-}
 !async function(){await krunch.compile(),krunch.register("router",route.Router),krunch.register("route",route.Route);krunch.mount("app")}(),paypal.Buttons({style:{shape:"pill",color:"silver",layout:"horizontal",label:"paypal"},createOrder:function(e,r){return r.order.create({purchase_units:[{amount:{value:"5"}}]})},onApprove:function(e,r){return r.order.capture().then((function(e){alert("Transaction completed by "+e.payer.name.given_name+"!")}))}}).render("#paypal-button-container");
