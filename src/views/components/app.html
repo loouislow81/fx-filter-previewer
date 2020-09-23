@@ -1,19 +1,19 @@
 <app>
   <router>
 
-    <y class="absolute top-0 left-0 w-full h-screen bg-charcoal-100">
+    <y class="mx-4 absolute top-0 left-0 bg-nero-400">
       <y class="flex flex-col justify-center items-center">
 
-        <y class="z-20 absolute top-2 right-56">
+        <y class="z-20 absolute top-2 right-24">
           <misc-app-install
             title="Install App"
             tooltip="Install offline app on your supported platforms such as Linux, Mac, Windows, Android or iOS without the App Store."
           ></misc-app-install>
         </y>
 
-        <y class="z-10 absolute top-2 right-12">
+        <!--<y class="z-10 absolute top-2 right-12">
           <misc-payment></misc-payment>
-        </y>
+        </y>-->
 
         <y class="absolute top-2 right-2">
           <social-github></social-github>
@@ -21,7 +21,7 @@
 
         <global-header></global-header>
 
-        <y class="flex flex-col justify-center items-center">
+        <y class="flex flex-wrap justify-center items-center">
 
           <misc-snippet
             snippet="<link defer href='https://unpkg.com/fx-filter@1.0.0/dist/fx-filter.css' rel='stylesheet' rel='preload' as='style' media='all'>"
@@ -57,7 +57,7 @@
           </y>
         </y>
 
-        <y class="py-10 text-4xl text-gray-300 font-serif select-none">
+        <y class="py-10 text-4xl font-serif select-none">
           Examples
         </y>
 

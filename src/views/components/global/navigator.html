@@ -29,29 +29,29 @@
   <script>
     export default {
       state: {
-        a: 'text-charcoal-100 bg-gray-300',
-        b: 'text-gray-300 bg-transparent',
-        c: 'text-gray-300 bg-transparent'
+        a: 'text-charcoal-100 bg-gray-100',
+        b: 'bg-transparent',
+        c: 'bg-transparent'
       },
       onClickA(e) {
         this.update({
-          a: 'text-charcoal-100 bg-gray-300',
-          b: 'text-gray-300 bg-transparent',
-          c: 'text-gray-300 bg-transparent'
+          a: 'text-charcoal-100 bg-gray-100',
+          b: 'bg-transparent',
+          c: 'bg-transparent'
         })
       },
       onClickB(e) {
         this.update({
-          a: 'text-gray-300 bg-transparent',
-          b: 'text-charcoal-100 bg-gray-300',
-          c: 'text-gray-300 bg-transparent'
+          a: 'bg-transparent',
+          b: 'text-charcoal-100 bg-gray-100',
+          c: 'bg-transparent'
         })
       },
       onClickC(e) {
         this.update({
-          a: 'text-gray-300 bg-transparent',
-          b: 'text-gray-300 bg-transparent',
-          c: 'text-charcoal-100 bg-gray-300'
+          a: 'bg-transparent',
+          b: 'bg-transparent',
+          c: 'text-charcoal-100 bg-gray-100'
         })
       },
       onMounted() {
@@ -63,15 +63,15 @@
 
         if (window.location.href === URL2) {
           this.update({
-            a: 'text-gray-300 bg-transparent',
-            b: 'text-charcoal-100 bg-gray-300',
-            c: 'text-gray-300 bg-transparent'
+            a: 'bg-transparent',
+            b: 'text-charcoal-100 bg-gray-100',
+            c: 'bg-transparent'
           })
         } else if (window.location.href === URL3) {
           this.update({
-            a: 'text-gray-300 bg-transparent',
-            b: 'text-gray-300 bg-transparent',
-            c: 'text-charcoal-100 bg-gray-300'
+            a: 'bg-transparent',
+            b: 'bg-transparent',
+            c: 'text-charcoal-100 bg-gray-100'
           })
         }
 
